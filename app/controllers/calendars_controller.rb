@@ -33,19 +33,16 @@ class CalendarsController < ApplicationController
       today_plans = []
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
-<<<<<<< HEAD
       end
     
       wday_num = (@todays_date + x).wday
       wday_num -= 7 if wday_num >= 7 # 「7以上なら減算」
     
       days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wday: wdays[wday_num] }
-=======
     
-      days = { :month => (@todays_date + x).month, :date => (@todays_date + x).day, :plans => today_plans, :wday => wdaysから値を取り出す記述}
+      days = { :month => (@todays_date + x).month, :date => (@todays_date + x).day, :plans => today_plans, :wday =>[wday_num] }
       days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans}
 
->>>>>>> 127d192d6bcc63ec61656a426215cb9241d13b98
       @week_days.push(days)
     end
   end
